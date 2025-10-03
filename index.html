@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Decentralized Citadel — Live</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.7.0/dist/ethers.umd.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-slate-50 min-h-screen">
+  <header class="bg-indigo-600 text-white p-4 flex justify-between items-center">
+    <h1 class="text-xl font-semibold">Decentralized Citadel</h1>
+    <div>
+      <button id="connectBtn" class="bg-white text-indigo-600 px-4 py-2 rounded">Connect Wallet</button>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-6 space-y-6">
+    <section class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-bold">Citizen Registry</h2>
+      <p id="regStatus" class="mt-2">Status: <span class="font-medium">Unknown</span></p>
+      <div class="mt-3">
+        <button id="registerBtn" class="px-4 py-2 bg-indigo-600 text-white rounded">Register as Citizen</button>
+      </div>
+    </section>
+
+    <section class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-bold">Submit Proposal</h2>
+      <textarea id="proposalText" rows="4" class="w-full mt-2 p-2 border rounded" placeholder="Write your proposal text here..."></textarea>
+      <div class="mt-3">
+        <button id="submitProposalBtn" class="px-4 py-2 bg-green-600 text-white rounded">Submit Proposal</button>
+      </div>
+    </section>
+
+    <section class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-bold">Active Proposals</h2>
+      <div id="proposals" class="mt-3 space-y-3">
+        <!-- proposals appended here -->
+      </div>
+      <div class="mt-4">
+        <button id="refreshBtn" class="px-4 py-2 bg-gray-200 rounded">Refresh</button>
+      </div>
+    </section>
+
+    <section class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-bold">Notes</h2>
+      <ol class="list-decimal pl-5 mt-2 space-y-1 text-sm text-slate-700">
+        <li>Replace <code>CONTRACT_ADDRESS</code> in <code>app.js</code> with your deployed contract address.</li>
+        <li>Replace <code>abi.json</code> with the actual contract ABI (and keep the file next to index.html).</li>
+        <li>This static site uses MetaMask / window.ethereum for signing transactions.</li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
